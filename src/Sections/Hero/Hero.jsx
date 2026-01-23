@@ -2,9 +2,10 @@ import HeroContent from "./HeroContent";
 
 const Hero = () => {
   return (
-    <div>
+    <div className="h-full w-full">
+      <canvas></canvas>
       <HeroContent />
-      <div></div>
+      <div className="hero-image-cont"></div>
     </div>
   );
 };
