@@ -1,28 +1,34 @@
+import ShinyText from "./TextAnimation/ShinyText";
+import CircularText from "./TextAnimation/CircularText";
+
 const HeroContent = () => {
   return (
-    <>
-      <div className="header">
-        <h1>
-          From raw data to infinite odyssey. Nebula isn't a view; it's a
-          departure.
-        </h1>
-        <p>Nebula</p>
-        <div className="clint-logos flex">
-          <div className="client-logo">
-            <img className="" src="../Images/logo1.png" alt="" />
-          </div>
-          <div className="client-logo">
-            <img className="" src="../Images/logo2.png" alt="" />
-          </div>
-          <div className="client-logo">
-            <img className="" src="../Images/logo3.png" alt="" />
-          </div>
-          <div className="client-logo">
-            <img className="" src="../Images/logo4.png" alt="" />
-          </div>
+    <div className="header text-white flex flex-col items-center justify-center h-screen text-center px-4">
+      <div className="relative flex items-center justify-center">
+        {/* <CircularText
+          text="EXPLORE THE UNKNOWN * BEYOND *"
+          onHover="speedUp"
+          spinDuration={25}
+          className="custom-class"
+        /> */}
+
+        <div className="absolute pointer-events-none">
+          <ShinyText
+            text="NEBULA"
+            speed={3}
+            delay={0}
+            color="#b5b5b5"
+            shineColor="#ffffff"
+            spread={120}
+            direction="left"
+            yoyo={false}
+            pauseOnHover={false}
+            disabled={false}
+            className="text-4xl font-bold"
+          />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
