@@ -1,17 +1,9 @@
 import ShinyText from "./TextAnimation/ShinyText";
-import CircularText from "./TextAnimation/CircularText";
 
 const HeroContent = () => {
   return (
-    <div className="header text-white flex flex-col items-center justify-center h-screen text-center px-4">
-      <div className="relative flex items-center justify-center">
-        {/* <CircularText
-          text="EXPLORE THE UNKNOWN * BEYOND *"
-          onHover="speedUp"
-          spinDuration={25}
-          className="custom-class"
-        /> */}
-
+    <div className="header text-white flex flex-col h-screen">
+      <div className="relative flex p-6">
         <div className="absolute pointer-events-none">
           <ShinyText
             text="NEBULA"
@@ -24,7 +16,7 @@ const HeroContent = () => {
             yoyo={false}
             pauseOnHover={false}
             disabled={false}
-            className="text-4xl font-bold"
+            className="text-4xl font-bold font4"
           />
         </div>
       </div>

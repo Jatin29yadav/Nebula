@@ -28,8 +28,8 @@ const DockNav = () => {
     <div>
       <Dock
         items={items}
-        panelHeight={68}
-        baseItemSize={50}
+        panelHeight={60}
+        baseItemSize={40}
         magnification={70}
       />
     </div>

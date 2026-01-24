@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Mrs+Saint+Delafield&family=Oxanium:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap");
 @import "tailwindcss";
 
 .font1 {
@@ -11,6 +12,10 @@
 
 .font3 {
   font-family: "Mrs Saint Delafield", cursive;
+}
+
+.font4 {
+  font-family: "Stalinist One", cursive;
 }
 
 body {
