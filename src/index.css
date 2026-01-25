@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Mrs+Saint+Delafield&family=Oxanium:wght@200..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Asimovian&family=Exo:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
 @import "tailwindcss";
 
 .font1 {
@@ -18,7 +19,19 @@
   font-family: "Stalinist One", cursive;
 }
 
+.font5 {
+  font-family: "Asimovian", sans-serif;
+}
+
+.font6 {
+  font-family: "Exo", sans-serif;
+}
+
+.font7 {
+  font-family: "Josefin Sans", sans-serif;
+}
+
 body {
-  font-family: "Oxanium", sans-serif;
+  font-family: "Exo", sans-serif;
   background-color: black;
 }

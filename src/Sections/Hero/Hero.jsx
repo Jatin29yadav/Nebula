@@ -1,13 +1,11 @@
+import ShortText from "../../Components/Hero/ShortText";
 import HeroContent from "./HeroContent";
-import DockNav from "../NavigationBar/Dock/DockNav";
 
 const Hero = () => {
   return (
-    <div className="h-full w-full">
+    <div className="h-screen w-full text-white flex flex-col justify-center gap-10 items-center">
+      <ShortText />
       <HeroContent />
-      <div className="absolute bottom-4 left-0 right-0 z-50 flex justify-center">
-        <DockNav />
-      </div>
     </div>
   );
 };
