@@ -17,7 +17,7 @@ const HeroContent = () => {
         opacity: 0,
         duration: 1.5,
         stagger: 0.3,
-        ease: "back.out(1.7)",
+        ease: "circ.out",
       });
     },
     { scope: heroRef },
@@ -41,7 +41,7 @@ const HeroContent = () => {
       </div>
 
       <div className="pointer-events-auto">
-        <Button />
+        <Button message="Enter the Rift" />
       </div>
     </div>
   );

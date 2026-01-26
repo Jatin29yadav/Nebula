@@ -4,7 +4,7 @@ const ShortText = () => {
       <div
         className="relative 
         flex items-center justify-center 
-        px-8 py-3 gap-4 
+        px-4 py-2 gap-4 
         rounded-full 
         backdrop-blur-md          
         bg-white/5                

@@ -7,13 +7,13 @@ import DocsPage from "./Pages/DocsPage";
 
 const App = () => {
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-black">
-      <div className="fixed z-10 lg:p-7 p-4 text-center w-full">
-        <Link to="/">
+    <div className="relative w-full h-screen overflow-y-auto bg-black">
+      <div className="fixed z-50 lg:p-7 p-4 text-center w-full pointer-events-none">
+        <Link to="/" className="pointer-events-auto inline-block">
           <Logo />
         </Link>
       </div>
-      <div className="fixed inset-0 z-0">
+      <div className="fixed inset-0 z-0 pointer-events-none">
         <Galaxy />
       </div>
       <div className="fixed bottom-4 left-0 right-0 flex justify-center z-50">
