@@ -1,4 +1,3 @@
-import React from "react";
 import Dock from "./Dock";
 import { HiHome } from "react-icons/hi";
 import { SiGoogledocs } from "react-icons/si";

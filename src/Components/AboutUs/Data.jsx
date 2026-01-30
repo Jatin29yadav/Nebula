@@ -1,10 +1,25 @@
+import ShinyText from "../../components/TextAnimation/ShinyText";
+
 const Data = ({ Num, Label }) => {
   return (
-    <div>
-      <div className="2xl:text-[4rem] sm:text-[3rem] text-[2rem] font-bold">
-        {Num}
+    <div className="data-item p-5 mx-auto">
+      <div className="font-bold font2 xl:text-[9rem] text-[6rem]">
+        <ShinyText
+          text={Num}
+          speed={2}
+          delay={0}
+          color="#b5b5b5"
+          shineColor="#ffffff"
+          spread={120}
+          direction="left"
+          yoyo={false}
+          pauseOnHover={false}
+          disabled={false}
+        />
       </div>
-      <div className="lg:text-md sm:text-sm text-xs">{Label}</div>
+      <div className="text-sm md:text-md text-gray-400 font-mono tracking-widest uppercase">
+        {Label}
+      </div>
     </div>
   );
 };

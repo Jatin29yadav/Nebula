@@ -1,4 +1,4 @@
-import Button from "../../Components/Buttons/Button";
+import Button from "../../components/Buttons/Button";
 import ShortText from "../../Components/Hero/ShortText";
 import { gsap } from "gsap";
 import { useRef } from "react";
