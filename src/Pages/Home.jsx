@@ -1,13 +1,17 @@
 import AboutUs from "../Sections/AboutUs/AboutUs";
-import Rocket from "../Sections/AboutUs/Rocket";
+import VideoSection from "@/Sections/VideoSection/VideoSection";
 import Hero from "../Sections/Hero/Hero";
+import Gallery from "@/Sections/Gallery/Gallery";
+import SpaceCraft from "@/Sections/SpaceCraft/SpaceCraft";
 
 const Home = () => {
   return (
-    <div className="min-h-screen w-[90vw] mx-auto z-10">
+    <div className="min-h-screen w-[90vw] mx-auto z-50">
       <Hero />
       <AboutUs />
-      {/* <Rocket /> */}
+      <VideoSection />
+      <SpaceCraft />
+      <Gallery />
     </div>
   );
 };
