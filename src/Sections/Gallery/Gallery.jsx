@@ -3,10 +3,10 @@ import DomeGallery from "@/components/Gallery/DomeGallery";
 
 const Gallery = () => {
   return (
-    <div className="mt-20">
+    <div className="my-10">
       <div style={{ width: "90vw", height: "100vh" }}>
         <DomeGallery
-          fit={0.7}
+          fit={0.5}
           minRadius={1000}
           maxVerticalRotationDeg={0}
           segments={34}
