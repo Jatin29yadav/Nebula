@@ -1,4 +1,3 @@
-import Button from "../../components/Buttons/Button";
 import ShortText from "../../Components/Hero/ShortText";
 import { gsap } from "gsap";
 import { useRef } from "react";
@@ -38,10 +37,6 @@ const HeroContent = () => {
       <div className="sm:w-7/12 w-10/12 md:text-[1.5rem] text-gray-300">
         Where gravity bends reality and light paints the darkness. Navigate a
         user experience built on the laws of physics and imagination.
-      </div>
-
-      <div className="pointer-events-auto">
-        <Button message="Enter the Rift" />
       </div>
     </div>
   );

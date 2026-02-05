@@ -48,7 +48,7 @@ const AboutUs = () => {
   return (
     <div
       ref={aboutRef}
-      className="text-white h-screen flex flex-col 2xl:gap-12 sm:gap-10 gap-7"
+      className="text-white h-screen flex flex-col justify-center 2xl:gap-12 sm:gap-10 gap-7"
     >
       <div className="about-content flex flex-col justify-start gap-10">
         <ShinyText
@@ -70,25 +70,15 @@ const AboutUs = () => {
           and deep-space aesthetics house the dreams of modern creators, all
           focused on a singular mission: to redefine the boundaries of the web.
         </div>
+        <div className="flex md:justify-start justify-center">
+          <Button message="Learn More" />
+        </div>
       </div>
-      <div className="flex flex-col mx-auto relative 2xl:gap-20 gap-10">
-        <div className="about-content flex flex-col xl:w-3/4 justify-between gap-10">
-          <div className="flex flex-col xl:items-start items-center xl:gap-10 gap-7">
-            <div className="text-gray-300">
-              As Nebula prepares to launch its next iteration, a symphony of
-              code and creativity hums within its core. Precision-engineered
-              components pulse with life, ready to propel this digital explorer
-              through the vast cosmic ocean that separates imagination from
-              reality
-            </div>
-            <Button message="Learn More" />
-          </div>
-        </div>
-        <div className="flex md:flex-row flex-col justify-between text-center sm:gap-10 gap-5 ">
-          <Data Num="400M" Label="Edition Size" />
-          <Data Num="98M" Label="Unique Components" />
-          <Data Num="36" Label="Launch Phases" />
-        </div>
+
+      <div className="flex md:flex-row flex-wrap flex-col justify-between text-center sm:gap-10 gap-5 ">
+        <Data Num="400M" Label="Edition Size" />
+        <Data Num="98M" Label="Unique Components" />
+        <Data Num="36" Label="Launch Phases" />
       </div>
     </div>
   );

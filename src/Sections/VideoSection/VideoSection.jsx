@@ -35,11 +35,11 @@ const VideoSection = () => {
   return (
     <div
       ref={containerRef}
-      className="w-full h-screen relative overflow-hidden "
+      className="w-full my-10 h-screen relative overflow-hidden "
     >
       <div
         ref={videoRef}
-        className="w-full h-full flex items-center justify-center scale-[0.1]"
+        className="w-full h-full flex items-center justify-center scale-[0.5]"
       >
         <video
           className="w-full h-full object-cover"
