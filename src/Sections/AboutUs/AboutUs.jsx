@@ -52,7 +52,7 @@ const AboutUs = () => {
     >
       <div className="about-content flex flex-col justify-start gap-10">
         <ShinyText
-          text="About NEBULA (001)"
+          text="ABOUT NEBULA (001)"
           speed={4}
           delay={0}
           color="#b5b5b5"

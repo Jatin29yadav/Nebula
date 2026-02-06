@@ -77,7 +77,7 @@ const Project = () => {
   return (
     <div className="my-10 w-full min-h-screen z-20 relative">
       <ShinyText
-        text="Our PROJECTS (002)"
+        text="OUR PROJECTS (003)"
         speed={4}
         delay={0}
         color="#b5b5b5"
