@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import ShinyText from "@/components/TextAnimation/ShinyText";
+import LogoLoop from "@/components/Loop/LogoLoop";
 
 const HeroContent = () => {
   const heroRef = useRef(null);
@@ -23,10 +24,21 @@ const HeroContent = () => {
     { scope: heroRef },
   );
 
+  const imageLogos = [
+    { src: "../../../Images/logo1.png", alt: "Company 1" },
+    { src: "../../../Images/logo2.png", alt: "Company 2" },
+    { src: "../../../Images/logo3.png", alt: "Company 3" },
+    { src: "../../../Images/logo4.png", alt: "Company 4" },
+    { src: "../../../Images/logo1.png", alt: "Company 5" },
+    { src: "../../../Images/logo2.png", alt: "Company 6" },
+    { src: "../../../Images/logo3.png", alt: "Company 7" },
+    { src: "../../../Images/logo4.png", alt: "Company 8" },
+  ];
+
   return (
     <div
       ref={heroRef}
-      className="flex flex-col gap-10 text-center items-center justify-center h-full relative pointer-events-none"
+      className="flex flex-col gap-10 text-center items-center justify-center h-full relative pointer-events-none px-4"
     >
       <ShortText />
 
@@ -61,9 +73,26 @@ const HeroContent = () => {
         </div>
       </div>
 
-      <div className="sm:w-7/12 w-10/12 md:text-[1.5rem] text-gray-300">
-        Where gravity bends reality and light paints the darkness. Navigate a
-        user experience built on the laws of physics and imagination.
+      <div className="w-full max-w-[800px] h-32 relative overflow-hidden flex items-center justify-center mask-gradient rounded-full">
+        <div className="absolute inset-0 z-10 bg-linear-to-r from-black via-transparent to-black pointer-events-none" />
+
+        <LogoLoop
+          logos={imageLogos}
+          speed={100}
+          direction="left"
+          logoHeight={80}
+          gap={60}
+          hoverSpeed={50}
+          scaleOnHover={true}
+          fadeOut={false}
+          ariaLabel="Technology partners"
+        />
+      </div>
+      <div className="hidden sm:block sm:w-7/12 md:text-[1.5rem] text-base leading-relaxed text-gray-300">
+        <p>
+          Where gravity bends reality and light paints the darkness. Navigate a
+          user experience built on the laws of physics and imagination.
+        </p>
       </div>
     </div>
   );

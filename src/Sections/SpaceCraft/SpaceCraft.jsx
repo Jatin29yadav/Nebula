@@ -67,7 +67,7 @@ const SpaceCraft = () => {
       tl.from(
         ".log-item",
         {
-          y: 250,
+          y: 100,
           opacity: 0,
           duration: 2,
           stagger: 0.5,
@@ -82,7 +82,7 @@ const SpaceCraft = () => {
   return (
     <div
       ref={containerRef}
-      className="text-white w-full min-h-screen flex flex-col justify-start py-20 gap-20"
+      className="xl:my-44 md:my-30 my-15 text-white w-full min-h-screen flex flex-col justify-start py-20 gap-20"
     >
       {/* Added 'header-section' class for GSAP targeting */}
       <div className="header-section flex flex-col gap-10 px-5 md:px-0">

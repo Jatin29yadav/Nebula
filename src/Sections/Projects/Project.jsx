@@ -75,7 +75,7 @@ const ProjectCard = ({ data }) => {
 
 const Project = () => {
   return (
-    <div className="my-10 w-full min-h-screen z-20 relative">
+    <div className="xl:my-44 md:my-30 my-15 w-full min-h-screen z-20 relative">
       <ShinyText
         text="OUR PROJECTS (003)"
         speed={4}

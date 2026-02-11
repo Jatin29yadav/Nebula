@@ -4,6 +4,7 @@ import Hero from "../Sections/Hero/Hero";
 import SpaceCraft from "@/Sections/SpaceCraft/SpaceCraft";
 import Project from "@/Sections/Projects/Project";
 import MidImg from "@/Sections/Mind-Logo-Img/MidImg";
+import Insight from "@/Sections/Insight/Insight";
 
 const Home = () => {
   return (
@@ -20,8 +21,9 @@ const Home = () => {
       </div>
       <div className="w-[90vw] mx-auto">
         <SpaceCraft />
-        <MidImg />
+        {/* <MidImg /> */}
         <Project />
+        <Insight />
       </div>
     </div>
   );
