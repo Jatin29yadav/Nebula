@@ -73,8 +73,8 @@ const HeroContent = () => {
         </div>
       </div>
 
-      <div className="w-full max-w-[800px] h-32 relative overflow-hidden flex items-center justify-center mask-gradient rounded-full">
-        <div className="absolute inset-0 z-10 bg-linear-to-r from-black via-transparent to-black pointer-events-none" />
+      <div className="w-full max-w-[800px] h-32 relative overflow-hidden flex items-center justify-center mask-gradient ">
+        <div className="absolute inset-0 z-10 pointer-events-none" />
 
         <LogoLoop
           logos={imageLogos}

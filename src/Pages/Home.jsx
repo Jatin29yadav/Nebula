@@ -5,26 +5,38 @@ import SpaceCraft from "@/Sections/SpaceCraft/SpaceCraft";
 import Project from "@/Sections/Projects/Project";
 import Insight from "@/Sections/Insight/Insight";
 import Engines from "@/Sections/Engines/Engines";
+import Blog from "@/Sections/Blog/Blog";
+import Footer from "@/Sections/Footer/Footer";
 
 const Home = () => {
   return (
     <div className="min-h-screen z-50 overflow-x-hidden">
-      <div className="w-[90vw] mx-auto">
+      <div id="hero" className="w-[90vw] mx-auto">
         <Hero />
       </div>
-      <div className="w-[90vw] mx-auto">
+      <div id="about" className="w-[90vw] mx-auto">
         <AboutUs />
       </div>
       <div className="w-screen">
         <VideoSection />
       </div>
       <div className="w-[90vw] mx-auto">
-        <SpaceCraft />
-        <Project />
-        <Insight />
+        <div id="log">
+          <SpaceCraft />
+        </div>
+        <div id="imagination">
+          <Project />
+        </div>
+        <div id="insights">
+          <Insight />
+        </div>
       </div>
       <div className="w-screen">
-        <Engines />
+        <div id="prime">
+          <Engines />
+        </div>
+        <Blog />
+        <Footer />
       </div>
     </div>
   );
