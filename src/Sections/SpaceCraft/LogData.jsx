@@ -3,7 +3,7 @@ import ElectricBorder from "@/components/BorderAnimation/ElectricBorder";
 
 const LogData = ({ data }) => {
   return (
-    <div className="w-full md:w-3/5 h-full">
+    <div className="w-full h-full">
       <ElectricBorder
         color={data.colorHex}
         speed={1.3}

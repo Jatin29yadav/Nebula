@@ -3,8 +3,8 @@ import VideoSection from "@/Sections/VideoSection/VideoSection";
 import Hero from "../Sections/Hero/Hero";
 import SpaceCraft from "@/Sections/SpaceCraft/SpaceCraft";
 import Project from "@/Sections/Projects/Project";
-import MidImg from "@/Sections/Mind-Logo-Img/MidImg";
 import Insight from "@/Sections/Insight/Insight";
+import Engines from "@/Sections/Engines/Engines";
 
 const Home = () => {
   return (
@@ -15,15 +15,16 @@ const Home = () => {
       <div className="w-[90vw] mx-auto">
         <AboutUs />
       </div>
-      <div className="w-screen ">
-        {" "}
+      <div className="w-screen">
         <VideoSection />
       </div>
       <div className="w-[90vw] mx-auto">
         <SpaceCraft />
-        {/* <MidImg /> */}
         <Project />
         <Insight />
+      </div>
+      <div className="w-screen">
+        <Engines />
       </div>
     </div>
   );

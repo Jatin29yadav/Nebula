@@ -67,10 +67,10 @@ const SpaceCraft = () => {
       tl.from(
         ".log-item",
         {
-          y: 100,
+          y: 50,
           opacity: 0,
-          duration: 2,
-          stagger: 0.5,
+          duration: 1.5,
+          stagger: 0.3,
           ease: "circ.out",
         },
         "-=0.5",
@@ -82,10 +82,9 @@ const SpaceCraft = () => {
   return (
     <div
       ref={containerRef}
-      className="xl:my-44 md:my-30 my-15 text-white w-full min-h-screen flex flex-col justify-start py-20 gap-20"
+      className="xl:my-44 md:my-30 my-15 text-white sm:px-10 w-full min-h-screen flex flex-col justify-start py-20 gap-20"
     >
-      {/* Added 'header-section' class for GSAP targeting */}
-      <div className="header-section flex flex-col gap-10 px-5 md:px-0">
+      <div className="header-section flex flex-col px-5 md:px-0">
         <ShinyText
           text="TRAJECTORY LOG (002)"
           speed={4}
@@ -97,7 +96,7 @@ const SpaceCraft = () => {
           yoyo={false}
           pauseOnHover={false}
           disabled={false}
-          className="lg:text-3xl sm:text-xl text-lg font4 tracking-widest"
+          className="lg:text-3xl sm:text-xl mb-10 text-lg font4 tracking-widest"
         />
         <p className="lg:text-[1.5rem] sm:text-[1.1rem] leading-relaxed xl:w-3/4 ">
           System checks complete. The Nebula-Class cruiser has left the orbital
@@ -107,7 +106,7 @@ const SpaceCraft = () => {
         </p>
       </div>
 
-      <div className="flex flex-col lg:gap-16 gap-10 items-center relative w-full px-5 md:px-0">
+      <div className="flex flex-wrap sm:gap-16 gap-10 items-center relative w-full md:w-3/4 mx-auto px-5 md:px-0">
         {flightLogData.map((item) => (
           <div key={item.id} className="log-item w-full flex justify-center">
             <LogData data={item} />

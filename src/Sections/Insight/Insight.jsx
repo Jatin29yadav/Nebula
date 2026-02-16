@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import ShinyText from "@/components/TextAnimation/ShinyText";
-import InsightCard from "./InsightCard"; // Import the child component
+import InsightCard from "./InsightCard";
 
-// THE DATA ARRAY
+gsap.registerPlugin(ScrollTrigger);
+
 const insightsData = [
   {
     id: 1,
@@ -27,9 +31,46 @@ const insightsData = [
 ];
 
 const Insight = () => {
+  const containerRef = useRef(null);
+
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 75%",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      tl.from(".insight-title", {
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        ease: "circ.out",
+      });
+
+      tl.from(
+        ".insight-card",
+        {
+          y: 60,
+          opacity: 0,
+          duration: 1.5,
+          stagger: 0.3,
+          ease: "circ.out",
+        },
+        "-=0.4",
+      );
+    },
+    { scope: containerRef },
+  );
+
   return (
-    <div className="text-white w-full min-h-screen py-20 px-5 md:px-0">
-      <div className="mb-16 container mx-auto px-4 md:px-10">
+    <div
+      ref={containerRef}
+      className="text-white w-full min-h-screen py-20 sm:px-5 md:px-0"
+    >
+      <div className="insight-title mb-10 container mx-auto px-4 md:px-10">
         <ShinyText
           text="OUR INSIGHTS (004)"
           speed={4}
@@ -47,7 +88,9 @@ const Insight = () => {
 
       <div className="w-full max-w-7xl mx-auto flex flex-col">
         {insightsData.map((item) => (
-          <InsightCard key={item.id} data={item} />
+          <div key={item.id} className="insight-card">
+            <InsightCard data={item} />
+          </div>
         ))}
       </div>
     </div>

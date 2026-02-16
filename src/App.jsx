@@ -30,7 +30,20 @@ const App = () => {
         </Link>
       </div>
       <div className="fixed inset-0 z-0 pointer-events-none">
-        <Galaxy />
+        <Galaxy
+          mouseRepulsion
+          mouseInteraction
+          density={0.5}
+          glowIntensity={0.5}
+          saturation={1}
+          hueShift={110}
+          twinkleIntensity={0.5}
+          rotationSpeed={0.15}
+          repulsionStrength={3.5}
+          autoCenterRepulsion={0}
+          starSpeed={0.5}
+          speed={0.5}
+        />
       </div>
       <div className="fixed bottom-4 left-0 right-0 flex justify-center z-50">
         <DockNav />

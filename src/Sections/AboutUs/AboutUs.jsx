@@ -62,9 +62,9 @@ const AboutUs = () => {
           yoyo={false}
           pauseOnHover={false}
           disabled={false}
-          className="lg:text-3xl sm:text-xl text-lg font4"
+          className="lg:text-3xl sm:text-xl mb-10 text-lg font4 tracking-widest uppercase"
         />
-        <div className="lg:text-[1.5rem] sm:text-[1.1rem] xl:w-3/4">
+        <div className="lg:text-[1.5rem] sm:text-[1.1rem] xl:w-3/4 leading-relaxed">
           A masterpiece of digital architecture, Nebula stands as a symbol of
           our relentless pursuit of innovation and design. Its fluid animations
           and deep-space aesthetics house the dreams of modern creators, all
