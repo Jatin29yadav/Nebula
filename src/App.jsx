@@ -1,12 +1,17 @@
 import Home from "./Pages/Home";
 import Galaxy from "./Components/Background/Galaxy";
-import DockNav from "./Components/NavigationBar/Dock/DockNav";
 import { Route, Routes, Link } from "react-router-dom";
 import Logo from "./Components/NavigationBar/Logo";
 import DocsPage from "./Pages/DocsPage";
+import Explore from "./Pages/ExplorePage";
+import Blogs from "./Pages/Blogs";
+import Enlist from "./Pages/Enlist";
+import Gallery from "./Pages/Gallery";
+
 import { useEffect } from "react";
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
+import CircularMenu from "./components/NavigationBar/CircularNav/CircularMenu";
 
 const App = () => {
   useEffect(() => {
@@ -14,14 +19,13 @@ const App = () => {
       autoRaf: true,
     });
 
-    lenis.on("scroll", (e) => {
-      console.log(e);
-    });
+    lenis.on("scroll", (e) => {});
 
     return () => {
       lenis.destroy();
     };
   }, []);
+
   return (
     <div className="relative w-full min-h-screen bg-black">
       <div className="fixed z-50 lg:p-7 p-4 text-center w-full pointer-events-none">
@@ -29,6 +33,7 @@ const App = () => {
           <Logo />
         </Link>
       </div>
+
       <div className="fixed inset-0 z-0 pointer-events-none">
         <Galaxy
           mouseRepulsion
@@ -45,12 +50,18 @@ const App = () => {
           speed={0.5}
         />
       </div>
-      <div className="fixed bottom-4 left-0 right-0 flex justify-center z-50">
-        <DockNav />
+
+      <div className="z-50">
+        <CircularMenu />
       </div>
+
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Docs" element={<DocsPage />} />
+        <Route path="/docs" element={<DocsPage />} />
+        <Route path="/explore" element={<Explore />} />
+        <Route path="/Blogs" element={<Blogs />} />
+        <Route path="/enlist" element={<Enlist />} />
+        <Route path="/gallery" element={<Gallery />} />
       </Routes>
     </div>
   );

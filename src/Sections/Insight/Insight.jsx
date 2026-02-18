@@ -56,7 +56,7 @@ const Insight = () => {
           y: 60,
           opacity: 0,
           duration: 1.5,
-          stagger: 0.3,
+          stagger: 0.5,
           ease: "circ.out",
         },
         "-=0.4",
