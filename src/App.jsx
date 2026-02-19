@@ -7,6 +7,7 @@ import Explore from "./Pages/ExplorePage";
 import Blogs from "./Pages/Blogs";
 import Enlist from "./Pages/Enlist";
 import Gallery from "./Pages/Gallery";
+import BlogPage from "./Sections/Blog/BlogPage";
 
 import { useEffect } from "react";
 import Lenis from "lenis";
@@ -62,6 +63,7 @@ const App = () => {
         <Route path="/Blogs" element={<Blogs />} />
         <Route path="/enlist" element={<Enlist />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/Blogs/:id" element={<BlogPage />} />
       </Routes>
     </div>
   );

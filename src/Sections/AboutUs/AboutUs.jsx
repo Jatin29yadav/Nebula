@@ -71,7 +71,9 @@ const AboutUs = () => {
           focused on a singular mission: to redefine the boundaries of the web.
         </div>
         <div className="flex md:justify-start justify-center">
-          <Button message="Learn More" />
+          <a href="/docs">
+            <Button message="Learn More" />
+          </a>
         </div>
       </div>
 

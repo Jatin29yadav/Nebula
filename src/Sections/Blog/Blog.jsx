@@ -98,8 +98,6 @@ const Blog = () => {
         />
       </div>
 
-      {/* Grid Layout Section */}
-      {/* Using CSS Grid: 1 column on mobile, 3 columns on large screens */}
       <div className="w-[90vw] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
         {blogData.map((item) => (
           <div key={item.id} className="blog-card">
