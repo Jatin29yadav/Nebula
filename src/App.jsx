@@ -3,11 +3,13 @@ import Galaxy from "./Components/Background/Galaxy";
 import { Route, Routes, Link } from "react-router-dom";
 import Logo from "./Components/NavigationBar/Logo";
 import DocsPage from "./Pages/DocsPage";
-import Explore from "./Pages/ExplorePage";
+import PlanetModel from "./Sections/PlanetModel/PlanetModel";
+import ExplorePage from "./Pages/ExplorePage";
 import Blogs from "./Pages/Blogs";
 import Enlist from "./Pages/Enlist";
 import Gallery from "./Pages/Gallery";
 import BlogPage from "./Sections/Blog/BlogPage";
+import Docs from "./Sections/Documentation/Docs";
 
 import { useEffect } from "react";
 import Lenis from "lenis";
@@ -59,7 +61,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/docs" element={<DocsPage />} />
-        <Route path="/explore" element={<Explore />} />
+        <Route path="/docs/read/:id" element={<Docs />} />
+        <Route path="/explore" element={<ExplorePage />} />
+        <Route path="/explore/:id" element={<PlanetModel />} />
         <Route path="/Blogs" element={<Blogs />} />
         <Route path="/enlist" element={<Enlist />} />
         <Route path="/gallery" element={<Gallery />} />

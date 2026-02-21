@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useNavigate } from "react-router-dom"; // 1. Imported useNavigate
 import ShinyText from "@/components/TextAnimation/ShinyText";
 import {
   IoRocketOutline,
@@ -15,56 +16,66 @@ import {
 } from "react-icons/io5";
 import Button from "@/components/Buttons/Button";
 
+// 2. Added 'id' to each card to match the routes for the DocReader
 const docsCards = [
   {
+    id: "getting-started",
     title: "Getting Started",
     description:
       "Nebula is a language-independent tool for managing and migrating database schemas using modern DevOps principles.",
     icon: <IoRocketOutline />,
   },
   {
+    id: "nebula-vs-others",
     title: "Nebula vs Others",
     description:
       "Nebula vs Classic Schema Migration Tools: Flyway, Liquibase, and ORMs. See how we compare in deep space.",
     icon: <IoGitCompareOutline />,
   },
   {
+    id: "schema-inspection",
     title: "Schema Inspection",
     description:
       "Inspecting Existing Database Schemas and Export Database Schema to Code efficiently.",
     icon: <IoSearchOutline />,
   },
   {
+    id: "declarative-workflow",
     title: "Declarative Workflow",
     description:
       "With Nebula's declarative schema migrations, users don't need to manually craft SQL migration scripts.",
     icon: <IoColorWandOutline />,
   },
   {
+    id: "versioned-workflow",
     title: "Versioned Workflow",
     description:
       "This guide offers a high-level overview of the Nebula versioned migration workflow for collaborative teams.",
     icon: <IoGitBranchOutline />,
   },
   {
+    id: "schema-as-code",
     title: "Schema as Code",
     description:
       "Treat your database architecture like standard application code with our HCL-based configurations.",
     icon: <IoCodeSlashOutline />,
   },
   {
+    id: "testing-framework",
     title: "Testing Framework",
     description:
       "The nebula schema test command lets you validate your database schema using familiar software testing paradigms.",
     icon: <IoTerminalOutline />,
   },
   {
+    id: "concepts",
     title: "Concepts",
     description:
       "Nebula uses a standard URL format to connect to databases and load schemas and migrations from various sources.",
     icon: <IoBulbOutline />,
   },
   {
+    id: "cloud",
     title: "Cloud",
     description:
       "Gain full visibility into the databases in your development and production environments directly from the cloud.",
@@ -74,6 +85,7 @@ const docsCards = [
 
 const DocsPage = () => {
   const containerRef = useRef(null);
+  const navigate = useNavigate(); // 3. Initialized navigate
 
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -115,7 +127,10 @@ const DocsPage = () => {
         </p>
 
         <div className="hero-elem flex flex-col items-center gap-4 mt-6">
-          <Button message={"Quick Start"} />
+          {/* 4. Made the Quick Start button clickable */}
+          <div onClick={() => navigate("/docs/read/getting-started")}>
+            <Button message={"Quick Start"} />
+          </div>
           <p className="text-gray-500 text-sm mt-2">
             Get started with Nebula in under 5 minutes.
           </p>
@@ -127,6 +142,7 @@ const DocsPage = () => {
           {docsCards.map((card, index) => (
             <div
               key={index}
+              onClick={() => navigate(`/docs/read/${card.id}`)} // 5. Added onClick navigation to the cards
               className="doc-card bg-[#0f0f0f] border border-white/5 rounded-xl p-8 hover:border-white/20 hover:bg-[#141414] transition-all duration-300 cursor-pointer flex flex-col gap-4 group"
             >
               <div className="text-gray-400 text-2xl group-hover:text-cyan-200 transition-colors">

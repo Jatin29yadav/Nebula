@@ -73,7 +73,7 @@ const Footer = () => {
                       key={link}
                       href={`#${targetId}`}
                       onClick={(e) => handleScroll(e, targetId)}
-                      className="hover:text-cyan-400 transition-colors font-mono cursor-pointer"
+                      className="hover:text-cyan-400 transition-colors font7 cursor-pointer"
                     >
                       {link}
                     </a>
@@ -84,7 +84,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 mt-10 pt-8 border-t border-white/15 text-xs text-white font-mono">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 mt-10 pt-8 border-t border-white/15 text-xs text-white font7">
           <div className="flex items-center gap-6">
             <a href="#privacy">Privacy Policy</a>
             <a href="#terms">Terms & Conditions</a>
