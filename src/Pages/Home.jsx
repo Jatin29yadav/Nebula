@@ -2,11 +2,11 @@ import AboutUs from "../Sections/AboutUs/AboutUs";
 import VideoSection from "@/Sections/VideoSection/VideoSection";
 import Hero from "../Sections/Hero/Hero";
 import SpaceCraft from "@/Sections/SpaceCraft/SpaceCraft";
-import Project from "@/Sections/Projects/Project";
 import Insight from "@/Sections/Insight/Insight";
 import Engines from "@/Sections/Engines/Engines";
 import Blog from "@/Sections/Blog/Blog";
 import Footer from "@/Sections/Footer/Footer";
+import ProjectCard from "@/Sections/Projects/ProjectCard";
 
 const Home = () => {
   return (
@@ -25,7 +25,7 @@ const Home = () => {
           <SpaceCraft />
         </div>
         <div id="imagination">
-          <Project />
+          <ProjectCard />
         </div>
         <div id="insights">
           <Insight />

@@ -15,6 +15,7 @@ const flightLogData = [
     statusColor: "text-blue-300",
     colorHex: "#93c5fd",
     log: "Atmospheric breach successful. We have left the safety of terra firma and entered the vacuum. Gravity stabilizers are holding at 98%. The horizon is now behind us.",
+    image: "../../../Images/Bg2.jpg",
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ const flightLogData = [
     statusColor: "text-orange-300",
     colorHex: "#fdba74",
     log: "Navigating dense debris fields. Shields are holding against micro-impacts. We are weaving through the chaos, charting a path where no vessel has flown before.",
+    image: "../../../Images/Bg3.jpg",
   },
   {
     id: 3,
@@ -31,6 +33,7 @@ const flightLogData = [
     statusColor: "text-purple-300",
     colorHex: "#d8b4fe",
     log: "Coordinates locked. The warp drive is spinning up to maximum RPM. Visuals are blurring into streaks of starlight. We are bending space to bridge the gap between worlds.",
+    image: "../../../Images/Bg4.jpg",
   },
   {
     id: 4,
@@ -39,6 +42,7 @@ const flightLogData = [
     statusColor: "text-green-400",
     colorHex: "#4ade80",
     log: "We have reached the edge of the known chart. Sensors detect no life, only the hum of the engine and the endless beauty of the void. The real exploration begins now.",
+    image: "../../../Images/Bg8.jpg",
   },
 ];
 
@@ -96,9 +100,9 @@ const SpaceCraft = () => {
           yoyo={false}
           pauseOnHover={false}
           disabled={false}
-          className="lg:text-3xl sm:text-xl mb-10 text-lg font4 tracking-widest"
+          className="lg:text-3xl sm:text-xl mb-10 text-lg font4 tracking-widest uppercase"
         />
-        <p className="lg:text-[1.5rem] sm:text-[1.1rem] leading-relaxed xl:w-3/4 ">
+        <p className="lg:text-[1.5rem] sm:text-[1.1rem] leading-relaxed xl:w-3/4 text-gray-300">
           System checks complete. The Nebula-Class cruiser has left the orbital
           dock and is currently traversing the outer rim. Below is the automated
           navigation log detailing our journey through the treacherous sectors

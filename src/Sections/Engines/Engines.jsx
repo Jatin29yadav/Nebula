@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import PlanetScene from "@/components/PlannetModel/PlanetScene";
 import ShinyText from "@/components/TextAnimation/ShinyText";
 import Button from "@/components/Buttons/Button";
+import LazyMount from "@/Components/Optimization/LazyMount";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,8 +65,10 @@ const Engines = () => {
         />
       </div>
 
-      <div className="engine-model-container relative md:w-[80vw] w-full h-[80vh] border-2 border-white/30 md:rounded-3xl overflow-hidden shadow-[0_0_40px_rgba(255,255,255,0.05)] bg-black">
-        <PlanetScene />
+      <div className="engine-model-container relative md:w-[80vw] w-full h-[80vh] border-2 border-white/30 md:rounded-3xl overflow-hidden bg-black">
+        <LazyMount>
+          <PlanetScene />
+        </LazyMount>
       </div>
       <div className="mt-10 px-5">
         <Button message={"Explore More"} />

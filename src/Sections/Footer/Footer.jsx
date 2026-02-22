@@ -18,7 +18,7 @@ const Footer = () => {
 
   return (
     <footer className="relative w-full bg-black text-white py-24 overflow-hidden border-t border-white/10">
-      <div className="absolute bottom-0 left-0 w-full h-[600px] pointer-events-none z-0">
+      <div className="absolute bottom-0 left-0 w-full h-150 pointer-events-none z-0">
         <div className="absolute inset-0 z-10" />
         <LightRays
           raysOrigin="top-center"

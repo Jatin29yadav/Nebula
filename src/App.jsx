@@ -11,22 +11,45 @@ import Gallery from "./Pages/Gallery";
 import BlogPage from "./Sections/Blog/BlogPage";
 import Docs from "./Sections/Documentation/Docs";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
 import CircularMenu from "./components/NavigationBar/CircularNav/CircularMenu";
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const App = () => {
   useEffect(() => {
     const lenis = new Lenis({
-      autoRaf: true,
+      autoRaf: false,
     });
 
-    lenis.on("scroll", (e) => {});
+    lenis.on("scroll", ScrollTrigger.update);
+
+    const ticker = (time) => {
+      lenis.raf(time * 1000);
+    };
+
+    gsap.ticker.add(ticker);
+
+    gsap.ticker.lagSmoothing(0);
 
     return () => {
       lenis.destroy();
+      gsap.ticker.remove(ticker);
     };
+  }, []);
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   return (
@@ -39,9 +62,9 @@ const App = () => {
 
       <div className="fixed inset-0 z-0 pointer-events-none">
         <Galaxy
-          mouseRepulsion
-          mouseInteraction
-          density={0.5}
+          mouseRepulsion={!isMobile}
+          mouseInteraction={!isMobile}
+          density={isMobile ? 0.2 : 0.5}
           glowIntensity={0.5}
           saturation={1}
           hueShift={110}

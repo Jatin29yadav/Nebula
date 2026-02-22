@@ -24,7 +24,7 @@ function Earth() {
   return (
     <group rotation-z={axialTilt}>
       <mesh ref={ref}>
-        <icosahedronGeometry args={[2, 64]} />
+        <icosahedronGeometry args={[2, 48]} />
         <EarthMaterial sunDirection={sunDirection} />
         <AtmosphereMesh rimHex={0xd35b3d} />
       </mesh>
@@ -39,7 +39,14 @@ const PlanetScene = () => {
     <Canvas
       className="w-full h-full"
       camera={{ position: [0, 0.1, 5] }}
-      gl={{ toneMapping: THREE.NoToneMapping }}
+      dpr={[1, 1.5]}
+      gl={{
+        toneMapping: THREE.NoToneMapping,
+        powerPreference: "high-performance",
+        antialias: false,
+        stencil: false,
+        alpha: true,
+      }}
     >
       <hemisphereLight args={[0xffffff, 0x000000, 3.0]} />
       <directionalLight position={[x, y, z]} />

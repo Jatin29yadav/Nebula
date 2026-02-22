@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -7,6 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const VideoSection = () => {
   const containerRef = useRef(null);
+  const wrapperRef = useRef(null);
   const videoRef = useRef(null);
 
   useGSAP(
@@ -21,27 +22,42 @@ const VideoSection = () => {
         },
       });
 
-      tl.to(videoRef.current, {
-        scale: 1,
-        duration: 3,
-        ease: "power2.inOut",
-      });
-
-      tl.to({}, { duration: 1 });
+      tl.fromTo(
+        wrapperRef.current,
+        { scale: 0.5 },
+        { scale: 1, duration: 3, ease: "none" },
+      );
     },
     { scope: containerRef },
   );
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          videoRef.current?.play().catch(() => {});
+        } else {
+          videoRef.current?.pause();
+        }
+      },
+      { threshold: 0 },
+    );
+
+    if (containerRef.current) observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div
       ref={containerRef}
-      className="w-full h-screen relative overflow-hidden "
+      className="w-full h-screen relative overflow-hidden bg-black"
     >
       <div
-        ref={videoRef}
-        className="w-full h-full flex items-center justify-center scale-[0.5]"
+        ref={wrapperRef}
+        className="w-full h-full flex items-center justify-center will-change-transform"
       >
         <video
+          ref={videoRef}
           className="w-full h-full object-cover"
           autoPlay
           muted
